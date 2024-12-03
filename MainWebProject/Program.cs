@@ -9,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
 
+// Register IHttpContextAccessor to resolve the HomeController's dependency
+builder.Services.AddHttpContextAccessor();
+
 var app = builder.Build();
 
 // Application-level event: On Startup
@@ -29,9 +32,8 @@ app.UseSession();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
 });
 
 // Handle global errors
