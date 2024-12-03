@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "UserControlProject/1.0.0": {
+        "dependencies": {
+          "HashingEncryptionProject": "1.0.0"
+        },
+        "runtime": {
+          "UserControlProject.dll": {}
+        }
+      },
+      "HashingEncryptionProject/1.0.0": {
+        "runtime": {
+          "HashingEncryptionProject.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UserControlProject/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HashingEncryptionProject/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

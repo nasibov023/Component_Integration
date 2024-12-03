@@ -7,14 +7,19 @@ namespace HashingLibrary
     public static class HashingEncryption
     {
         // Hashing using SHA-256
-        public static string ComputeSHA256(string input)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(input));
-                return Convert.ToHexString(hashBytes); // Converts to a hex string
-            }
-        }
+       public static string ComputeSHA256(string input)
+{
+    if (input == null)
+    {
+        throw new ArgumentNullException(nameof(input), "Input cannot be null.");
+    }
+
+    using (SHA256 sha256 = SHA256.Create())
+    {
+        byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(input));
+        return Convert.ToHexString(hashBytes); // Converts to a hex string
+    }
+}
 
         // Encryption using AES
         public static byte[] Encrypt(string plainText, byte[] key, byte[] iv)
